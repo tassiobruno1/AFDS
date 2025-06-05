@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Questão 1 - AFD</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <h1 class="text-center mb-4">Questão 1 - AFD</h1>
+
+    <!-- AFD (a) -->
+    <section class="card mb-4 shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title">a) Todas as cadeias em {0,1}* que representam cada 1 seguido imediatamente de dois 0.</h2>
+        <p></p>
+        <div class="input-group mb-3">
+          <input id="inputAfd1" type="text" class="form-control" placeholder="Digite uma cadeia (0 e 1)" />
+          <button class="btn btn-primary" onclick="verificarAFD1()">Verificar</button>
+        </div>
+        <div id="transicoesAfd1" class="mb-2"></div>
+        <p id="resultadoAfd1" class="fw-bold"></p>
+      </div>
+    </section>
+
+    <!-- AFD (b) -->
+    <section class="card mb-4 shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title">b) Todas as cadeias em {a,b}* de modo que o último símbolo seja b e o número de
+ símbolos a seja par.</h2> 
+ <p></p>
+        <div class="input-group mb-3">
+          <input id="inputAfd2" type="text" class="form-control" placeholder="Digite uma cadeia (a e b)" />
+          <button class="btn btn-primary" onclick="verificarAFD2()">Verificar</button>
+        </div>
+        <p id="resultadoAfd2" class="fw-bold"></p>
+      </div>
+    </section>
+
+    <!-- Navegação -->
+    <nav class="d-flex justify-content-between">
+      <a href="index.html" class="btn btn-outline-secondary">Início</a>
+      <a href="questao2.html" class="btn btn-outline-secondary">Próxima</a>
+    </nav>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
