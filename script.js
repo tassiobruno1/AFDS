@@ -88,20 +88,33 @@ function buscarComputador() {
   const posicoes = [];
 
   for (let i = 0; i <= texto.length - palavra.length; i++) {
-    if (texto.substring(i, i + palavra.length) === palavra) {
+    let estado = 0; // Começa no estado inicial (q0)
+    
+    // Percorre as letras do texto a partir da posição i
+    for (let j = 0; j < palavra.length; j++) {
+      if (texto[i + j] === palavra[j]) {
+        estado++; // Transita para o próximo estado se a letra corresponder
+      } else {
+        break; // Se não corresponder, a busca para nesse ponto
+      }
+    }
+
+    // Se chegarmos ao estado final (q10), encontramos a palavra
+    if (estado === palavra.length) {
       posicoes.push(i);
     }
   }
 
   const resultadoEl = document.getElementById('resultadoComputador');
   if (posicoes.length > 0) {
-    resultadoEl.innerText = ` Ocorrências encontradas nas posições: ${posicoes.join(', ')}.`;
+    resultadoEl.innerText = `Ocorrências encontradas nas posições: ${posicoes.join(', ')}.`;
     resultadoEl.className = 'texto-sucesso';
   } else {
-    resultadoEl.innerText = ' Nenhuma ocorrência encontrada.';
+    resultadoEl.innerText = 'Nenhuma ocorrência encontrada.';
     resultadoEl.className = 'texto-erro';
   }
 }
+
 
 // Questão 3 - Máquina de Refrigerante (Mealy)
 let saldo = 0;
